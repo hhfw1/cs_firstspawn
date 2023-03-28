@@ -174,10 +174,11 @@ end
 
 
 RegisterNetEvent('cs:introCinematic:start', function()
-    local gender = GetGender()
+    
     PrepareMusicEvent("FM_INTRO_START") --FM_INTRO_START
     TriggerMusicEvent("FM_INTRO_START") --FM_INTRO_START
     local plyrId = PlayerPedId() -- PLAYER ID
+    local gender = IsPedMale(plyrId)
     -----------------------------------------------
     if gender == 0 then
         RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 31, 8)
