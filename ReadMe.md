@@ -130,15 +130,14 @@ Replace This:
 
 With This: 
 ```lua
-    RegisterNetEvent("qb-clothes:client:CreateFirstCharacter", function()
-        newCreate = true
-        QBCore.Functions.GetPlayerData(function(pd)
-            PlayerData = pd
-            setClientParams()
-            InitializeCharacter(Framework.GetGender(true))
-            if newCreate then
-                TriggerEvent('cs:introCinematic:start')
-            end
-        end)
+    RegisterNUICallback("appearance_save", function(appearance, cb)
+        cb(1)
+        client.wearClothes(appearance, "head")
+        client.wearClothes(appearance, "body")
+        client.wearClothes(appearance, "bottom")
+        client.exitPlayerCustomization(appearance)
+        if newCreate then
+            TriggerEvent('cs:introCinematic:start')
+        end
     end)
 ```
