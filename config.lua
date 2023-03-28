@@ -1,7 +1,5 @@
 CodeStudio = {}
 
-CodeStudio.ServerType = 'QB'
-
 CodeStudio.Taxi = `dynasty`                                     --Taxi Model
 CodeStudio.TaxiPlate = 'CS5M'                              --Taxi Number Plate
 CodeStudio.TaxiModded = true
