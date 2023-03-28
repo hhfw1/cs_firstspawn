@@ -2,25 +2,6 @@ local taxiVeh
 local isTaxi = false
 local Active = false
 
-Citizen.CreateThread(function()
-    exports['qb-target']:AddCircleZone('newp', vector3(402.06, -1000.52, -99.0), 2.5, {
-        name = 'newp',
-        useZ = true,
-        debugPoly = false,
-        }, {
-            options = {
-                {
-                    icon = 'fas-fa-hand',
-                    label = 'Enter City',
-                    action = function()
-                        TriggerEvent('cs:introCinematic:start')
-                    end,
-                }
-            },
-        distance = 2.5,
-    })
-end)
-
 
 local sub_b0b5 = { 
     [0] = "MP_Plane_Passenger_1",

@@ -4,6 +4,10 @@ If you need support I now have a discord available, it helps me keep track of is
 
 https://discord.gg/ESwSKregtt
 
+1. Event to Trigger the cutscene 
+```lua 
+TriggerEvent('cs:introCinematic:start')
+```
 
 # qb-clothing
 
