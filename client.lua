@@ -174,18 +174,18 @@ end
 
 
 RegisterNetEvent('cs:introCinematic:start', function()
-    local gender = GetGender()
+    local gender = IsPedMale()
     PrepareMusicEvent("FM_INTRO_START") --FM_INTRO_START
     TriggerMusicEvent("FM_INTRO_START") --FM_INTRO_START
     local plyrId = PlayerPedId() -- PLAYER ID
     -----------------------------------------------
-    if gender == 0 then
+    if gender then
         RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 31, 8)
     else	
         RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 103, 8)
     end
     while not HasCutsceneLoaded() do Wait(10) end --- waiting for the cutscene to load
-    if gender == 0 then
+    if gender then
         RegisterEntityForCutscene(0, 'MP_Male_Character', 3, GetEntityModel(PlayerPedId()), 0)
         RegisterEntityForCutscene(PlayerPedId(), 'MP_Male_Character', 0, 0, 0)
         SetCutsceneEntityStreamingFlags('MP_Male_Character', 0, 1) 

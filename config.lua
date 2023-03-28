@@ -15,40 +15,10 @@ CodeStudio.WelcomeMessage = 'Welocome To My Server'
 CodeStudio.ReachedMessage = "We've reached our destination"
 
 
-if CodeStudio.ServerType == "QB" then 
-    QBCore = exports['qb-core']:GetCoreObject()
-elseif CodeStudio.ServerType == "ESX" then 
-    ESX = exports['es_extended']:getSharedObject()
+
+
+function Notify(msg)
+    SetNotificationTextEntry('STRING') --- DELETE ME IF YOU ARE USING ANOTHER SYSTEM
+    AddTextComponentString(msg)  --- DELETE ME IF YOU ARE USING ANOTHER SYSTEM
+    DrawNotification(0,1)  --- DELETE ME IF YOU ARE USING ANOTHER SYSTEM
 end
-
-
-function Notify(msg, state)
-    if CodeStudio.ServerType == "QB" then 
-        QBCore.Functions.Notify(msg, state)
-    elseif CodeStudio.ServerType == "ESX" then 
-        ESX.ShowNotification(msg, false, true, nil)
-    end
-end
-
-
-
-function GetGender()
-    if CodeStudio.ServerType == "ESX" then 
-        local PlayerData = ESX.GetPlayerData()
-        local Gender = PlayerData.sex
-        if Gender == 'm' then 
-            return 0
-        else
-            return 1
-        end
-    elseif CodeStudio.ServerType == "QB" then
-        local PlayerData = QBCore.Functions.GetPlayerData()
-        local Gender = PlayerData.charinfo.gender
-        return Gender
-    else
-        --YOU CAN ADD YOUR CUSTOM EVENTS HERE
-    end
-end
-
-
-
