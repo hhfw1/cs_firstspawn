@@ -82,6 +82,7 @@ With This:
         local clothing = json.encode(skinData)
         TriggerServerEvent("qb-clothing:saveSkin", model, clothing)
         if newCreate then
+            newCreate = false
             TriggerEvent('cs:introCinematic:start')
         end
     end
@@ -141,6 +142,7 @@ With This:
         client.wearClothes(appearance, "bottom")
         client.exitPlayerCustomization(appearance)
         if newCreate then
+            newCreate = false
             TriggerEvent('cs:introCinematic:start')
         end
     end)
