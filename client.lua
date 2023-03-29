@@ -173,11 +173,12 @@ end
 
 
 
+
 RegisterNetEvent('cs:introCinematic:start', function()
-    local gender = IsPedMale()
+    local plyrId = PlayerPedId() -- PLAYER ID
+    local gender = IsPedMale(plyrId)
     PrepareMusicEvent("FM_INTRO_START") --FM_INTRO_START
     TriggerMusicEvent("FM_INTRO_START") --FM_INTRO_START
-    local plyrId = PlayerPedId() -- PLAYER ID
     -----------------------------------------------
     if gender then
         RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 31, 8)
@@ -226,7 +227,12 @@ RegisterNetEvent('cs:introCinematic:start', function()
     StopCutsceneImmediately()
     DoScreenFadeOut(250)
     Wait(2500)
-    CreateTaxi(CodeStudio.TaxiSpawn)
+    if CodeStudio.useTaxi then
+        CreateTaxi(CodeStudio.TaxiSpawn)
+    else
+        DoScreenFadeIn(250)
+        SetEntityCoords(plyrId, CodeStudio.SpawnPedLoc)
+    end
 end) 
 
 
