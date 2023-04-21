@@ -1,6 +1,6 @@
 # CodeStudio Intro Cutscene Start with AI Taxi | Standalone
 
-If you need support I now have a discord available, it helps me keep track of issues and give better support.
+As this is a free open-source script, there is no personal support available due to time constraints. If you require personal support, please consider using Tebex
 
 https://discord.gg/ESwSKregtt
 
