@@ -227,6 +227,7 @@ RegisterNetEvent('cs:introCinematic:start', function()
     StopCutsceneImmediately()
     DoScreenFadeOut(250)
     Wait(2500)
+    ClearPedWetness(plyrId)
     if CodeStudio.useTaxi then
         CreateTaxi(CodeStudio.TaxiSpawn)
     else
