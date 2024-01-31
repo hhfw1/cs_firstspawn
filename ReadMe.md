@@ -2,7 +2,7 @@
 
 As this is a free open-source script, there is no personal support available due to time constraints. If you require personal support, please consider using Tebex
 
-https://discord.gg/ESwSKregtt
+https://discord.gg/62jqEKz8Sb
 
 1. Event to Trigger the cutscene 
 ```lua 
