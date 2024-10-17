@@ -1,7 +1,7 @@
 CodeStudio = {}
 
 
-CodeStudio.useTaxi = false          --Use AI Taxi or Not?
+CodeStudio.useTaxi = true          --Use AI Taxi or Not?
 CodeStudio.SpawnPedLoc = vector3(-1044.91, -2750.2, 21.36)    --If not using AI Taxi then set player spawn location 
 
 CodeStudio.Taxi = `dynasty`                                     --Taxi Model
@@ -12,10 +12,8 @@ CodeStudio.TaxiDestination = vector4(-1087.01, -271.25, 37.32, 26.0)         --T
 CodeStudio.SkipToNearestLoc = vector4(-1198.92, -304.74, 37.47, 284.08)       --Taxi Skip Nearest Location to destination
 
 
-
 CodeStudio.WelcomeMessage = 'Welocome To My Server'
 CodeStudio.ReachedMessage = "We've reached our destination"
-
 
 
 

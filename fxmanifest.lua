@@ -1,11 +1,7 @@
 fx_version 'adamant'
 game 'gta5'
 author 'CodeStudio'
-description 'CodeStudio Intro Cutscene Start with Taxi'
-version '1.0'
+description 'Intro Cutscene Start with AI Taxi'
+version '1.1'
 
-
-client_scripts {
-    'client.lua',
-    'config.lua'
-}
+client_scripts {'client.lua','config.lua'}

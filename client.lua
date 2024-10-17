@@ -2,377 +2,231 @@ local taxiVeh
 local isTaxi = false
 local Active = false
 
-
 local sub_b0b5 = { 
-    [0] = "MP_Plane_Passenger_1",
-    [1] = "MP_Plane_Passenger_2",
-    [2] = "MP_Plane_Passenger_3",
-    [3] = "MP_Plane_Passenger_4",
-    [4] = "MP_Plane_Passenger_5",
-    [5] = "MP_Plane_Passenger_6",
-    [6] = "MP_Plane_Passenger_7"
+    "MP_Plane_Passenger_1", "MP_Plane_Passenger_2", "MP_Plane_Passenger_3", 
+    "MP_Plane_Passenger_4", "MP_Plane_Passenger_5", "MP_Plane_Passenger_6", "MP_Plane_Passenger_7"
 }
 
-function sub_b747(ped, a_1)
-    if a_1 == 0 then
-        SetPedComponentVariation(ped, 0, 21, 0, 0)
-        SetPedComponentVariation(ped, 1, 0, 0, 0)
-        SetPedComponentVariation(ped, 2, 9, 0, 0)
-        SetPedComponentVariation(ped, 3, 1, 0, 0)
-        SetPedComponentVariation(ped, 4, 9, 0, 0)
-        SetPedComponentVariation(ped, 5, 0, 0, 0)
-        SetPedComponentVariation(ped, 6, 4, 8, 0)
-        SetPedComponentVariation(ped, 7, 0, 0, 0)
-        SetPedComponentVariation(ped, 8, 15, 0, 0)
-        SetPedComponentVariation(ped, 9, 0, 0, 0)
-        SetPedComponentVariation(ped, 10, 0, 0, 0)
-        SetPedComponentVariation(ped, 11, 10, 0, 0)
-        ClearPedProp(ped, 0)
-        ClearPedProp(ped, 1)
-        ClearPedProp(ped, 2)
-        ClearPedProp(ped, 3)
-        ClearPedProp(ped, 4)
-        ClearPedProp(ped, 5)
-        ClearPedProp(ped, 6)
-        ClearPedProp(ped, 7)
-        ClearPedProp(ped, 8)
-    elseif a_1 == 1 then
-        SetPedComponentVariation(ped, 0, 13, 0, 0)
-        SetPedComponentVariation(ped, 1, 0, 0, 0)
-        SetPedComponentVariation(ped, 2, 5, 4, 0)
-        SetPedComponentVariation(ped, 3, 1, 0, 0)
-        SetPedComponentVariation(ped, 4, 10, 0, 0)
-        SetPedComponentVariation(ped, 5, 0, 0, 0)
-        SetPedComponentVariation(ped, 6, 10, 0, 0)
-        SetPedComponentVariation(ped, 7, 11, 2, 0)
-        SetPedComponentVariation(ped, 8, 13, 6, 0)
-        SetPedComponentVariation(ped, 9, 0, 0, 0)
-        SetPedComponentVariation(ped, 10, 0, 0, 0)
-        SetPedComponentVariation(ped, 11, 10, 0, 0)
-        ClearPedProp(ped, 0)
-        ClearPedProp(ped, 1)
-        ClearPedProp(ped, 2)
-        ClearPedProp(ped, 3)
-        ClearPedProp(ped, 4)
-        ClearPedProp(ped, 5)
-        ClearPedProp(ped, 6)
-        ClearPedProp(ped, 7)
-        ClearPedProp(ped, 8)
-    elseif a_1 == 2 then
-        SetPedComponentVariation(ped, 0, 15, 0, 0)
-        SetPedComponentVariation(ped, 1, 0, 0, 0)
-        SetPedComponentVariation(ped, 2, 1, 4, 0)
-        SetPedComponentVariation(ped, 3, 1, 0, 0)
-        SetPedComponentVariation(ped, 4, 0, 1, 0)
-        SetPedComponentVariation(ped, 5, 0, 0, 0)
-        SetPedComponentVariation(ped, 6, 1, 7, 0)
-        SetPedComponentVariation(ped, 7, 0, 0, 0)
-        SetPedComponentVariation(ped, 8, 2, 9, 0)
-        SetPedComponentVariation(ped, 9, 0, 0, 0)
-        SetPedComponentVariation(ped, 10, 0, 0, 0)
-        SetPedComponentVariation(ped, 11, 6, 0, 0)
-        ClearPedProp(ped, 0)
-        ClearPedProp(ped, 1)
-        ClearPedProp(ped, 2)
-        ClearPedProp(ped, 3)
-        ClearPedProp(ped, 4)
-        ClearPedProp(ped, 5)
-        ClearPedProp(ped, 6)
-        ClearPedProp(ped, 7)
-        ClearPedProp(ped, 8)
-    elseif a_1 == 3 then
-        SetPedComponentVariation(ped, 0, 14, 0, 0)
-        SetPedComponentVariation(ped, 1, 0, 0, 0)
-        SetPedComponentVariation(ped, 2, 5, 3, 0)
-        SetPedComponentVariation(ped, 3, 3, 0, 0)
-        SetPedComponentVariation(ped, 4, 1, 6, 0)
-        SetPedComponentVariation(ped, 5, 0, 0, 0)
-        SetPedComponentVariation(ped, 6, 11, 5, 0)
-        SetPedComponentVariation(ped, 7, 0, 0, 0)
-        SetPedComponentVariation(ped, 8, 2, 0, 0)
-        SetPedComponentVariation(ped, 9, 0, 0, 0)
-        SetPedComponentVariation(ped, 10, 0, 0, 0)
-        SetPedComponentVariation(ped, 11, 3, 12, 0)
-        ClearPedProp(ped, 0)
-        ClearPedProp(ped, 1)
-        ClearPedProp(ped, 2)
-        ClearPedProp(ped, 3)
-        ClearPedProp(ped, 4)
-        ClearPedProp(ped, 5)
-        ClearPedProp(ped, 6)
-        ClearPedProp(ped, 7)
-        ClearPedProp(ped, 8)
-    elseif a_1 == 4 then
-        SetPedComponentVariation(ped, 0, 18, 0, 0)
-        SetPedComponentVariation(ped, 1, 0, 0, 0)
-        SetPedComponentVariation(ped, 2, 15, 3, 0)
-        SetPedComponentVariation(ped, 3, 15, 0, 0)
-        SetPedComponentVariation(ped, 4, 2, 5, 0)
-        SetPedComponentVariation(ped, 5, 0, 0, 0)
-        SetPedComponentVariation(ped, 6, 4, 6, 0)
-        SetPedComponentVariation(ped, 7, 4, 0, 0)
-        SetPedComponentVariation(ped, 8, 3, 0, 0)
-        SetPedComponentVariation(ped, 9, 0, 0, 0)
-        SetPedComponentVariation(ped, 10, 0, 0, 0)
-        SetPedComponentVariation(ped, 11, 4, 0, 0)
-        ClearPedProp(ped, 0)
-        ClearPedProp(ped, 1)
-        ClearPedProp(ped, 2)
-        ClearPedProp(ped, 3)
-        ClearPedProp(ped, 4)
-        ClearPedProp(ped, 5)
-        ClearPedProp(ped, 6)
-        ClearPedProp(ped, 7)
-        ClearPedProp(ped, 8)
-    elseif a_1 == 5 then
-        SetPedComponentVariation(ped, 0, 27, 0, 0)
-        SetPedComponentVariation(ped, 1, 0, 0, 0)
-        SetPedComponentVariation(ped, 2, 7, 3, 0)
-        SetPedComponentVariation(ped, 3, 11, 0, 0)
-        SetPedComponentVariation(ped, 4, 4, 8, 0)
-        SetPedComponentVariation(ped, 5, 0, 0, 0)
-        SetPedComponentVariation(ped, 6, 13, 14, 0)
-        SetPedComponentVariation(ped, 7, 5, 3, 0)
-        SetPedComponentVariation(ped, 8, 3, 0, 0)
-        SetPedComponentVariation(ped, 9, 0, 0, 0)
-        SetPedComponentVariation(ped, 10, 0, 0, 0)
-        SetPedComponentVariation(ped, 11, 2, 7, 0)
-        ClearPedProp(ped, 0)
-        ClearPedProp(ped, 1)
-        ClearPedProp(ped, 2)
-        ClearPedProp(ped, 3)
-        ClearPedProp(ped, 4)
-        ClearPedProp(ped, 5)
-        ClearPedProp(ped, 6)
-        ClearPedProp(ped, 7)
-        ClearPedProp(ped, 8)
-    elseif a_1 == 6 then
-        SetPedComponentVariation(ped, 0, 16, 0, 0)
-        SetPedComponentVariation(ped, 1, 0, 0, 0)
-        SetPedComponentVariation(ped, 2, 15, 1, 0)
-        SetPedComponentVariation(ped, 3, 3, 0, 0)
-        SetPedComponentVariation(ped, 4, 5, 6, 0)
-        SetPedComponentVariation(ped, 5, 0, 0, 0)
-        SetPedComponentVariation(ped, 6, 2, 8, 0)
-        SetPedComponentVariation(ped, 7, 0, 0, 0)
-        SetPedComponentVariation(ped, 8, 2, 0, 0)
-        SetPedComponentVariation(ped, 9, 0, 0, 0)
-        SetPedComponentVariation(ped, 10, 0, 0, 0)
-        SetPedComponentVariation(ped, 11, 3, 7, 0)
-        ClearPedProp(ped, 0)
-        ClearPedProp(ped, 1)
-        ClearPedProp(ped, 2)
-        ClearPedProp(ped, 3)
-        ClearPedProp(ped, 4)
-        ClearPedProp(ped, 5)
-        ClearPedProp(ped, 6)
-        ClearPedProp(ped, 7)
-        ClearPedProp(ped, 8)
+local function applyPedVariations(ped, variations)
+    for k, v in pairs(variations) do
+        SetPedComponentVariation(ped, k, v[1], v[2], 0)
+    end
+    for i = 0, 8 do
+        ClearPedProp(ped, i)
     end
 end
 
+local function setPedOutfit(ped, outfitType)
+    local outfits = {
+        [0] = {{0, 21}, {2, 9}, {3, 1}, {4, 9}, {6, 4}, {8, 15}, {11, 10}},
+        [1] = {{0, 13}, {2, 5}, {3, 1}, {4, 10}, {6, 10}, {7, 11}, {8, 13}, {11, 10}},
+        [2] = {{0, 15}, {2, 1}, {3, 1}, {4, 0}, {6, 1}, {8, 2}, {11, 6}},
+        [3] = {{0, 14}, {2, 5}, {3, 3}, {4, 1}, {6, 11}, {8, 2}, {11, 3}},
+        [4] = {{0, 18}, {2, 15}, {3, 15}, {4, 2}, {6, 4}, {7, 4}, {8, 3}, {11, 4}},
+        [5] = {{0, 27}, {2, 7}, {3, 11}, {4, 4}, {6, 13}, {7, 5}, {8, 3}, {11, 2}},
+        [6] = {{0, 16}, {2, 15}, {3, 3}, {4, 5}, {6, 2}, {8, 2}, {11, 3}}
+    }
 
-
+    applyPedVariations(ped, outfits[outfitType] or {})
+end
 
 RegisterNetEvent('cs:introCinematic:start', function()
-    local plyrId = PlayerPedId() -- PLAYER ID
-    local gender = IsPedMale(plyrId)
-    PrepareMusicEvent("FM_INTRO_START") --FM_INTRO_START
-    TriggerMusicEvent("FM_INTRO_START") --FM_INTRO_START
-    -----------------------------------------------
-    if gender then
-        RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 31, 8)
-    else	
-        RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", 103, 8)
-    end
-    while not HasCutsceneLoaded() do Wait(10) end --- waiting for the cutscene to load
-    if gender then
-        RegisterEntityForCutscene(0, 'MP_Male_Character', 3, GetEntityModel(PlayerPedId()), 0)
-        RegisterEntityForCutscene(PlayerPedId(), 'MP_Male_Character', 0, 0, 0)
-        SetCutsceneEntityStreamingFlags('MP_Male_Character', 0, 1) 
-        local female = RegisterEntityForCutscene(0,"MP_Female_Character",3,0,64) 
-        NetworkSetEntityInvisibleToNetwork(female, true)
-    else
-        RegisterEntityForCutscene(0, 'MP_Female_Character', 3, GetEntityModel(PlayerPedId()), 0)
-        RegisterEntityForCutscene(PlayerPedId(), 'MP_Female_Character', 0, 0, 0)
-        SetCutsceneEntityStreamingFlags('MP_Female_Character', 0, 1) 
-        local male = RegisterEntityForCutscene(0,"MP_Male_Character",3,0,64) 
-        NetworkSetEntityInvisibleToNetwork(male, true)
-    end
-    local ped = {}
-    for v_3=0, 6, 1 do
-        if v_3 == 1 or v_3 == 2 or v_3 == 4 or v_3 == 6 then
-            ped[v_3] = CreatePed(26, `mp_f_freemode_01`, -1117.77783203125, -1557.6248779296875, 3.3819, 0.0, 0, 0)
-        else
-            ped[v_3] = CreatePed(26, `mp_m_freemode_01`, -1117.77783203125, -1557.6248779296875, 3.3819, 0.0, 0, 0)
-        end
-        if not IsEntityDead(ped[v_3]) then
-                sub_b747(ped[v_3], v_3)
-            FinalizeHeadBlend(ped[v_3])
-            RegisterEntityForCutscene(ped[v_3], sub_b0b5[v_3], 0, 0, 64)
-        end
-    end
-     
-    NewLoadSceneStartSphere(-1212.79, -1673.52, 7, 1000, 0) ----- avoid texture bugs
-    -----------------------------------------------
-    SetWeatherTypeNow("EXTRASUNNY") ---- SUN TIME
-    StartCutscene(4) --- START the custscene
+    local plyrId = PlayerPedId()
+    local gender = IsPedModel(plyrId, "mp_m_freemode_01")
+    
+    PrepareMusicEvent("FM_INTRO_START")
+    TriggerMusicEvent("FM_INTRO_START")
 
-    Wait(34520) --- custscene time
-    for v_3=0, 6, 1 do
-        DeleteEntity(ped[v_3])
+    local cutsceneType = gender and 31 or 103
+    RequestCutsceneWithPlaybackList("MP_INTRO_CONCAT", cutsceneType, 8)
+
+    while not HasCutsceneLoaded() do Wait(10) end
+    
+    local entityModel = GetEntityModel(plyrId)
+    local cutsceneEntity = gender and 'MP_Male_Character' or 'MP_Female_Character'
+    
+    RegisterEntityForCutscene(0, cutsceneEntity, 3, entityModel, 0)
+    RegisterEntityForCutscene(plyrId, cutsceneEntity, 0, 0, 0)
+    SetCutsceneEntityStreamingFlags(cutsceneEntity, 0, 1)
+    
+    local oppositeGenderEntity = RegisterEntityForCutscene(0, gender and "MP_Female_Character" or "MP_Male_Character", 3, 0, 64)
+    NetworkSetEntityInvisibleToNetwork(oppositeGenderEntity, true)
+
+    local ped = {}
+    for i = 0, 6 do
+        local model = (i % 2 == 1) and `mp_f_freemode_01` or `mp_m_freemode_01`
+        ped[i] = CreatePed(26, model, -1117.7778, -1557.6249, 3.3819, 0.0, 0, 0)
+        setPedOutfit(ped[i], i)
+        RegisterEntityForCutscene(ped[i], sub_b0b5[i], 0, 0, 64)
     end
+
+    NewLoadSceneStartSphere(-1212.79, -1673.52, 7, 1000, 0)
+    SetWeatherTypeNow("EXTRASUNNY")
+    StartCutscene(4)
+
+    Wait(34520) -- Cutscene duration
+
+    for i = 0, 6 do
+        DeleteEntity(ped[i])
+    end
+
     PrepareMusicEvent("AC_STOP")
     TriggerMusicEvent("AC_STOP")
     StopCutsceneImmediately()
+
     DoScreenFadeOut(250)
     Wait(2500)
+
     ClearPedWetness(plyrId)
+
     if CodeStudio.useTaxi then
         CreateTaxi(CodeStudio.TaxiSpawn)
     else
-        DoScreenFadeIn(250)
         SetEntityCoords(plyrId, CodeStudio.SpawnPedLoc)
+        DoScreenFadeIn(250)
     end
-end) 
+end)
 
 
+function createTaxiPed(vehicle)
+    local model = GetHashKey("a_m_y_stlat_01")
+    if DoesEntityExist(vehicle) and IsModelValid(model) then
+        RequestModel(model)
+        while not HasModelLoaded(model) do Wait(1) end
+        
+        local taxiPed = CreatePedInsideVehicle(vehicle, 26, model, -1, true, false)
+        SetAmbientVoiceName(taxiPed, "A_M_M_EASTSA_02_LATINO_FULL_01")
+        SetBlockingOfNonTemporaryEvents(taxiPed, true)
+        SetEntityAsMissionEntity(taxiPed, true, true)
+        SetModelAsNoLongerNeeded(model)
 
-
-function CreateTaxiPed(vehicle)
-	local model = GetHashKey("a_m_y_stlat_01")
-	if DoesEntityExist(vehicle) then
-		if IsModelValid(model) then
-			RequestModel(model)
-			while not HasModelLoaded(model) do
-				Wait(1)
-			end
-			taxiPed = CreatePedInsideVehicle(vehicle, 26, model, -1, true, false)
-			SetAmbientVoiceName(ped, "A_M_M_EASTSA_02_LATINO_FULL_01")	
-			SetBlockingOfNonTemporaryEvents(ped, true)
-			SetEntityAsMissionEntity(ped, true, true)
-			SetModelAsNoLongerNeeded(model)
-		end
-	end
+        return taxiPed
+    end
 end
-
-
 
 function CreateTaxi(x, y, z)
-	local taxiModel = CodeStudio.Taxi
-	if IsModelValid(taxiModel) then
-		if IsThisModelACar(taxiModel) then
-			RequestModel(taxiModel)
-			while not HasModelLoaded(taxiModel) do
-				Wait(1)
-			end
-			if not DoesEntityExist(taxiVeh) then
-                PlaySoundFrontend(-1, "Text_Arrive_Tone", "Phone_SoundSet_Default", 1)
-                -- Wait(2000)
-                taxiVeh = CreateVehicle(taxiModel, x, y, z, CodeStudio.TaxiSpawn.w, true, false)
-                SetVehicleNumberPlateText(taxiVeh, CodeStudio.TaxiPlate)
-                SetEntityAsMissionEntity(taxiVeh, true, true)
-                SetVehicleEngineOn(taxiVeh, true, true, false)
-                if CodeStudio.TaxiModded then
-                    SetVehicleColours(taxiVeh, 0,88)
-                    SetVehicleModKit(taxiVeh, 0)
-                    SetVehicleMod(taxiVeh,10,1,0)
-                end
-                SetVehicleOnGroundProperly(taxiVeh)
-                CreateTaxiPed(taxiVeh)
-                local blip = AddBlipForEntity(taxiVeh)
-                SetBlipSprite(blip, 198)
-                SetBlipFlashes(blip, true)
-                SetBlipFlashTimer(blip, 5000)
-                SetModelAsNoLongerNeeded(taxiModel)
-                SetHornEnabled(taxiVeh, true)
-                StartVehicleHorn(taxiVeh, 1000, GetHashKey("NORMAL"), false)
-                SetPedIntoVehicle(PlayerPedId(), taxiVeh, 2)
-                if IsPedInVehicle(PlayerPedId(), taxiVeh, 1) then
-                    DoScreenFadeIn(250)
-                    Notify(CodeStudio.WelcomeMessage)
-                    SetVehicleDoorsLocked(taxiVeh, 4)
-                    TaskVehicleDriveToCoord(taxiPed, taxiVeh, CodeStudio.TaxiDestination.x, CodeStudio.TaxiDestination.y, CodeStudio.TaxiDestination.z, CodeStudio.TaxiDestination.w, 0, GetEntityModel(taxiVeh), 524604, 10.0)
-                    SetPedKeepTask(taxiPed, true)
-                    Active = true
-                    print(Active)
-                    Wait(10000)
-                    isTaxi = true
-                end
-			end
-		end
-	end	
+    local taxiModel = CodeStudio.Taxi
+    if IsModelValid(taxiModel) and IsThisModelACar(taxiModel) then
+        RequestModel(taxiModel)
+        while not HasModelLoaded(taxiModel) do Wait(1) end
+
+        taxiVeh = CreateVehicle(taxiModel, x, y, z, CodeStudio.TaxiSpawn.w, true, false)
+        SetVehicleNumberPlateText(taxiVeh, CodeStudio.TaxiPlate)
+        SetEntityAsMissionEntity(taxiVeh, true, true)
+        SetVehicleEngineOn(taxiVeh, true, true, false)
+
+        if CodeStudio.TaxiModded then
+            SetVehicleColours(taxiVeh, 0, 88)
+            SetVehicleModKit(taxiVeh, 0)
+            SetVehicleMod(taxiVeh, 10, 1, 0)
+        end
+
+        SetVehicleOnGroundProperly(taxiVeh)
+        local taxiPed = createTaxiPed(taxiVeh)
+        local blip = AddBlipForEntity(taxiVeh)
+        SetBlipSprite(blip, 198)
+        SetBlipFlashes(blip, true)
+        SetBlipFlashTimer(blip, 5000)
+        SetHornEnabled(taxiVeh, true)
+        StartVehicleHorn(taxiVeh, 1000, GetHashKey("NORMAL"), false)
+        SetPedIntoVehicle(PlayerPedId(), taxiVeh, 2)
+
+        -- YOU CAN ADD YOUR FUEL EVENT HERE FOR EXAMPLE: 
+        --exports['cdn-fuel']:SetFuel(taxiVeh, 100)
+        -- exports['LegacyFuel']:SetFuel(taxiVeh, 100)
+
+        if IsPedInVehicle(PlayerPedId(), taxiVeh, 1) then
+            DoScreenFadeIn(250)
+            Notify(CodeStudio.WelcomeMessage)
+            SetVehicleDoorsLocked(taxiVeh, 4)
+
+            TaskVehicleDriveToCoord(taxiPed, taxiVeh, CodeStudio.TaxiDestination.x, CodeStudio.TaxiDestination.y, CodeStudio.TaxiDestination.z, 10.0, 0, GetEntityModel(taxiVeh), 524604, 10.0)
+            SetPedKeepTask(taxiPed, true)
+
+            Active = true
+            isTaxi = true
+            TaxiRunning(taxiPed)
+        end
+    end
 end
 
-
-
-Citizen.CreateThread(function()
+function TaxiRunning(taxiPed)
     local sleep = 200
-    while true do
-        if Active then
-            local dist = #(GetEntityCoords(PlayerPedId()) - vector3(CodeStudio.TaxiDestination.x, CodeStudio.TaxiDestination.y, CodeStudio.TaxiDestination.z))
-            if dist <= 10 then
-                local player = PlayerPedId()
-                local vehicle = GetVehiclePedIsIn(player,false)
-                ClearPedTasks(player)
-                SetVehicleForwardSpeed(vehicle,19.0)
+    while Active do
+        local dist = #(GetEntityCoords(PlayerPedId()) - vector3(CodeStudio.TaxiDestination.x, CodeStudio.TaxiDestination.y, CodeStudio.TaxiDestination.z))
+        if dist <= 10 then
+            local player = PlayerPedId()
+            local vehicle = GetVehiclePedIsIn(player, false)
+
+            for i = 19, 6, -4 do
+                SetVehicleForwardSpeed(vehicle, i)
                 Wait(200)
-                SetVehicleForwardSpeed(vehicle,15.0)
-                Wait(200)
-                SetVehicleForwardSpeed(vehicle,11.0)
-                Wait(200)
-                SetVehicleForwardSpeed(vehicle,6.0)
-                Wait(200)
-                SetVehicleForwardSpeed(vehicle,0.0)
-                Notify(CodeStudio.ReachedMessage)
-                SetVehicleDoorsLocked(vehicle, 1)
-                SetPedKeepTask(taxiPed, false)
-                TaskLeaveVehicle(player, vehicle, 0)
-                Wait(2500)
-                DeleteTaxi(vehicle, taxiPed)
-                Active = false
-                isTaxi = false
             end
-            if isTaxi then
-                sleep = 3
-                DisplayHelpText('Press ~INPUT_FRONTEND_RRIGHT~ Skip Drive')
-                if IsControlJustPressed(1, 194) then
-                    local vehicle = GetVehiclePedIsIn(PlayerPedId(),false)
-                    isTaxi = false
-                    sleep = 200
-                    DoScreenFadeOut(2500)
-                    Wait(3000)
-                    SetEntityCoords(vehicle, vector3(CodeStudio.SkipToNearestLoc.x, CodeStudio.SkipToNearestLoc.y, CodeStudio.SkipToNearestLoc.z))
-                    SetEntityHeading(vehicle, CodeStudio.SkipToNearestLoc.w)
-                    DoScreenFadeIn(250)
-                end
+            SetVehicleForwardSpeed(vehicle, 0.0)
+
+            Notify(CodeStudio.ReachedMessage)
+            SetVehicleDoorsLocked(vehicle, 1)
+
+            TaskLeaveVehicle(player, vehicle, 0)
+            Wait(2500)
+            DeleteTaxi(vehicle, taxiPed)
+
+            Active = false
+            isTaxi = false
+        end
+
+        if isTaxi then
+            sleep = 3
+            DisplayHelpText('Press ~INPUT_FRONTEND_RRIGHT~ Skip Drive')
+
+            if IsControlJustPressed(1, 194) then
+                local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+                isTaxi = false
+                sleep = 200
+                DoScreenFadeOut(2500)
+                Wait(3000)
+                SetEntityCoords(vehicle, vector3(CodeStudio.SkipToNearestLoc.x, CodeStudio.SkipToNearestLoc.y, CodeStudio.SkipToNearestLoc.z))
+                SetEntityHeading(vehicle, CodeStudio.SkipToNearestLoc.w)
+                DoScreenFadeIn(250)
             end
         end
         Wait(sleep)
     end
-end)
+end
+
 
 function DeleteTaxi(vehicle, driver)
-	if DoesEntityExist(vehicle) then
-		if IsPedInVehicle(PlayerPedId(), vehicle, false) then
-			TaskLeaveVehicle(PlayerPedId(), vehicle, 0)
-			Wait(2000)			
-		end
-		local blip = GetBlipFromEntity(vehicle)
-		if DoesBlipExist(blip) then
-			RemoveBlip(blip)
-		end
-		DeleteEntity(driver)
-		DeleteEntity(vehicle)
-	end
-	if not DoesEntityExist(vehicle) and DoesEntityExist(driver) then
-		DeleteEntity(driver)
-	end
+    if DoesEntityExist(vehicle) and DoesEntityExist(driver) then
+        if IsPedInVehicle(PlayerPedId(), vehicle, false) then
+            TaskLeaveVehicle(PlayerPedId(), vehicle, 0)
+            Wait(2000)
+        end
+
+        TaskVehicleDriveWander(driver, vehicle, 60.0, 524604)
+        local blip = GetBlipFromEntity(vehicle)
+        if DoesBlipExist(blip) then
+            RemoveBlip(blip)
+        end
+
+        SetEntityAsNoLongerNeeded(vehicle)
+        SetPedAsNoLongerNeeded(driver)
+
+        Wait(5000)
+
+        if DoesEntityExist(vehicle) then DeleteEntity(vehicle) end
+        if DoesEntityExist(driver) then DeleteEntity(driver) end
+    end
 end
 
 
+-- Display help text function
 function DisplayHelpText(str)
-	SetTextComponentFormat("STRING")
-	AddTextComponentString(str)
-	DisplayHelpTextFromStringLabel(0, 0, 1, -1)
+    SetTextComponentFormat("STRING")
+    AddTextComponentString(str)
+    DisplayHelpTextFromStringLabel(0, 0, 1, -1)
 end
+
+
+RegisterCommand('test_scene', function()
+    TriggerEvent('cs:introCinematic:start')
+end)
