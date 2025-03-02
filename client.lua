@@ -7,14 +7,20 @@ local sub_b0b5 = {
     "MP_Plane_Passenger_4", "MP_Plane_Passenger_5", "MP_Plane_Passenger_6", "MP_Plane_Passenger_7"
 }
 
+
 local function applyPedVariations(ped, variations)
-    for k, v in pairs(variations) do
-        SetPedComponentVariation(ped, k, v[1], v[2], 0)
+    for _, v in ipairs(variations) do
+        if v[1] ~= 2 then
+            SetPedComponentVariation(ped, v[1], v[2], 0, 0) 
+        else
+            SetPedComponentVariation(ped, v[1], v[2], 1, 1) 
+        end
     end
     for i = 0, 8 do
         ClearPedProp(ped, i)
     end
 end
+
 
 local function setPedOutfit(ped, outfitType)
     local outfits = {
@@ -27,7 +33,8 @@ local function setPedOutfit(ped, outfitType)
         [6] = {{0, 16}, {2, 15}, {3, 3}, {4, 5}, {6, 2}, {8, 2}, {11, 3}}
     }
 
-    applyPedVariations(ped, outfits[outfitType] or {})
+    local selectedOutfit = outfits[outfitType] or outfits[0]
+    applyPedVariations(ped, selectedOutfit)
 end
 
 RegisterNetEvent('cs:introCinematic:start', function()
@@ -54,12 +61,16 @@ RegisterNetEvent('cs:introCinematic:start', function()
 
     local ped = {}
     for i = 0, 6 do
-        local model = (i % 2 == 1) and `mp_f_freemode_01` or `mp_m_freemode_01`
-        ped[i] = CreatePed(26, model, -1117.7778, -1557.6249, 3.3819, 0.0, 0, 0)
+        local isFemale = (i % 2 == 1) 
+        local model = isFemale and `mp_f_freemode_01` or `mp_m_freemode_01`
+        RequestModel(model)
+        while not HasModelLoaded(model) do Wait(10) end
+        ped[i] = CreatePed(26, model, -1117.7778, -1557.6249, 3.3819, 0.0, false, false)
+        SetEntityAsMissionEntity(ped[i], true, true)
         setPedOutfit(ped[i], i)
         RegisterEntityForCutscene(ped[i], sub_b0b5[i], 0, 0, 64)
     end
-
+    
     NewLoadSceneStartSphere(-1212.79, -1673.52, 7, 1000, 0)
     SetWeatherTypeNow("EXTRASUNNY")
     StartCutscene(4)
