@@ -150,8 +150,7 @@ function CreateTaxi(x, y, z)
             DoScreenFadeIn(250)
             Notify(CodeStudio.WelcomeMessage)
             SetVehicleDoorsLocked(taxiVeh, 4)
-
-            TaskVehicleDriveToCoord(taxiPed, taxiVeh, CodeStudio.TaxiDestination.x, CodeStudio.TaxiDestination.y, CodeStudio.TaxiDestination.z, 10.0, 0, GetEntityModel(taxiVeh), 524604, 10.0)
+            TaskVehicleDriveToCoord(taxiPed, taxiVeh, CodeStudio.TaxiDestination.x, CodeStudio.TaxiDestination.y, CodeStudio.TaxiDestination.z, 200.0, 0, GetEntityModel(taxiVeh), 786859, true)
             SetPedKeepTask(taxiPed, true)
 
             Active = true
@@ -213,7 +212,7 @@ function DeleteTaxi(vehicle, driver)
             Wait(2000)
         end
 
-        TaskVehicleDriveWander(driver, vehicle, 60.0, 524604)
+        TaskVehicleDriveWander(driver, vehicle, 60.0, 786859)
         local blip = GetBlipFromEntity(vehicle)
         if DoesBlipExist(blip) then
             RemoveBlip(blip)
